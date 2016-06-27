@@ -22,18 +22,19 @@ public partial class page_user_study : System.Web.UI.Page
         string t = "";
         string c = "";
         string w = "";
-        SqlCommand sel = new SqlCommand("select uUsername from users where uID = @ID",conn); 
+        /*SqlCommand sel = new SqlCommand("select uUsername from users where uID = @uid",conn);*/
+        int[] ids = new int[10];
         while (i < 10)
         {
-            int[] ids = new int[10];
+            
             if (reader.Read())
             {
                 t = reader.GetString(0);
                 c = reader.GetString(1);
-                sel.Parameters.AddWithValue("@ID", reader.GetString(3));
-                w = sel.ExecuteScalar().ToString();
-                ids[m] =Convert.ToInt16(reader.GetString(3).ToString());
-                str = str + "<div class='panel panel-default'><div class='panel-heading'><a name ='pID' value='"+ids[m]+"' href='javascript:form1.submit();'>" + t + "</a></div></div>";
+               /* sel.Parameters.AddWithValue("@uid",Convert.ToInt32( reader.GetValue(3).ToString()));
+                w = sel.ExecuteScalar().ToString();*/
+                ids[m] =Convert.ToInt32( reader.GetValue(5).ToString());
+                str = str + "<div class='panel panel-default'><div class='panel-heading'><a href='content.aspx?id=" +ids[m]+"'>"+ t + "</a></div></div>";
             }
             else
             {
@@ -45,7 +46,7 @@ public partial class page_user_study : System.Web.UI.Page
         }
         if (t=="")
             str = "<div class='panel panel-default'><div class='panel-heading'>暂无内容</div></div>";
-
+        reader.Close();
 
         this.tiezi.InnerHtml = str;
     }

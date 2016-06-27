@@ -14,6 +14,7 @@
 </nav> 	
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
+<div><button class="btn btn-default col-lg-offset-11"><a href="writen.aspx">发帖</a></button></div><br />
 <div id = "tiezi" runat="server"></div>
 </asp:Content>
 

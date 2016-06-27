@@ -33,11 +33,11 @@ public partial class page_login : System.Web.UI.Page
         conn.Close();
         if (i!=0)
         {
-            Session["user"] = a;
+            Session["user"] = i;
             switch (sel)
             {
-                case "admin": Response.Redirect("./admin/homepage.aspx"); break;
-                case "user": Response.Redirect("./student/homepage.aspx"); break;
+                case "admin": Response.Redirect("./user/homepage.aspx"); break;
+                case "user": Response.Redirect("./user/homepage.aspx"); break;
                 
             }
             

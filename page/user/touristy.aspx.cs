@@ -17,30 +17,36 @@ public partial class page_user_touristy : System.Web.UI.Page
         cmd.Connection = conn;
         SqlDataReader reader = cmd.ExecuteReader();
         int i = 0;
-        string str = "";
-        string t = "测试标题";
-        string c = "测试正文";
-        string w = "作者名字";
-        SqlCommand sel = new SqlCommand("select uUsername from users where uID = @ID", conn);
+        int m = 0;
+        string str = "<form name='form1' action='content.aspx' method='get'>";
+        string t = "";
+        string c = "";
+        string w = "";
+        /*SqlCommand sel = new SqlCommand("select uUsername from users where uID = @uid",conn);*/
+        int[] ids = new int[10];
         while (i < 10)
         {
+
             if (reader.Read())
             {
                 t = reader.GetString(0);
-                c = t = reader.GetString(1);
-                sel.Parameters.AddWithValue("@ID", reader.GetString(3));
-                w = sel.ExecuteScalar().ToString();
-                str = str + "<div class='panel panel-default'><div class='panel-heading'>" + t + "</div><div class='panel-body'>" + c + "</div><div class='panel-footer'>" + w + "</div></div>";
+                c = reader.GetString(1);
+                /* sel.Parameters.AddWithValue("@uid",Convert.ToInt32( reader.GetValue(3).ToString()));
+                 w = sel.ExecuteScalar().ToString();*/
+                ids[m] = Convert.ToInt32(reader.GetValue(5).ToString());
+                str = str + "<div class='panel panel-default'><div class='panel-heading'><a href='content.aspx?id=" + ids[m] + "'>" + t + "</a></div></div>";
             }
             else
             {
                 break;
             }
             i++;
+            m++;
+            str = str + "</form>";
         }
-        if (str == "")
+        if (t == "")
             str = "<div class='panel panel-default'><div class='panel-heading'>暂无内容</div></div>";
-
+        reader.Close();
 
         this.tiezi.InnerHtml = str;
     }
