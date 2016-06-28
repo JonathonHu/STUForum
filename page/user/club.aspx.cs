@@ -18,10 +18,10 @@ public partial class page_user_club : System.Web.UI.Page
         SqlDataReader reader = cmd.ExecuteReader();
         int i = 0;
         int m = 0;
-        string str = "<form name='form1' action='form_action.aspx' method='get'>";
+        string str = "<form name='form1' action='content.aspx' method='get'>";
         string t = "";
         string c = "";
-        string w = "";
+       
         /*SqlCommand sel = new SqlCommand("select uUsername from users where uID = @uid",conn);*/
         int[] ids = new int[10];
         while (i < 10)
@@ -50,4 +50,9 @@ public partial class page_user_club : System.Web.UI.Page
 
         this.tiezi.InnerHtml = str;
     }
+    protected void write_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("./writen.aspx");
+    }
+ 
 }

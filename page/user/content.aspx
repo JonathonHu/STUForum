@@ -9,12 +9,20 @@
 			<li><a href="./club.aspx">七彩社团</a></li>
 			<li><a href="./study.aspx">学习交流</a></li>
 			<li><a href="./touristy.aspx">一起去旅行</a></li>
+            <li><a href="./myPage.aspx">我的主页</a></li>
 		</ul>
 	</div>
 </nav> 	
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
+<div>
+<div style="margin-bottom:10px;">
+    <asp:Button runat="server" ID="write" class=" col-lg-offset-10 btn btn-default btn-sm" 
+          Text="赞" onclick="write_Click"/>
+    <asp:Button runat="server" ID="fave" class="btn btn-default btn-sm" 
+          Text="收藏" onclick="fave_Click" />
+<asp:Button runat="server" ID="reply" class="btn btn-default btn-sm" 
+          Text="回复" onclick="reply_Click" />
 <div id="tiezi" runat="server"></div>
-<div><button class="btn btn-default col-lg-offset-11"><a href="reply.aspx">回复</a></button></div><br />
 </asp:Content>
 

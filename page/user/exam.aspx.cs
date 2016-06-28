@@ -50,4 +50,9 @@ public partial class page_user_exam : System.Web.UI.Page
 
         this.tiezi.InnerHtml = str;
     }
+    protected void write_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("./writen.aspx");
+    }
+   
 }

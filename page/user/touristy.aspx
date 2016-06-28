@@ -9,12 +9,16 @@
 			<li><a href="./club.aspx">七彩社团</a></li>
 			<li><a href="./study.aspx">学习交流</a></li>
 			<li class="active"><a href="./touristy.aspx">一起去旅行</a></li>
+            <li><a href="./myPage.aspx">我的主页</a></li>
 		</ul>
 	</div>
 </nav> 	
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-<div><button class="btn btn-default col-lg-offset-11"><a href="writen.aspx">发帖</a></button></div><br />
+<div style="margin-bottom:10px;">
+    <asp:Button runat="server" ID="write" class="col-lg-offset-11  btn btn-default btn-sm" 
+          Text="发贴" onclick="write_Click"/>
+  </div>
 <div id = "tiezi" runat="server"></div>
 </asp:Content>
 
