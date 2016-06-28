@@ -11,4 +11,8 @@ public partial class page_user_reply : System.Web.UI.Page
     {
 
     }
+    protected void submit_Click(object sender, EventArgs e)
+    {
+
+    }
 }

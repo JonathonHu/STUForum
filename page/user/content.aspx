@@ -15,5 +15,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
 <div id="tiezi" runat="server"></div>
+<div><button class="btn btn-default col-lg-offset-11"><a href="reply.aspx">回复</a></button></div><br />
 </asp:Content>
 
