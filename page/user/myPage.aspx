@@ -10,6 +10,7 @@
 			<li><a href="./study.aspx">学习交流</a></li>
 			<li><a href="./touristy.aspx">一起去旅行</a></li>
             <li class="active"><a href="./myPage.aspx">我的主页</a></li>
+            <li><a href="./share.aspx">文件分享</a></li>
 		</ul>
 	</div>
 </nav> 		
