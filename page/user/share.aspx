@@ -17,6 +17,11 @@
 </nav> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
+<div style="margin-bottom:10px;">
+    <asp:Button runat="server" ID="write" class="col-lg-offset-11  btn btn-default btn-sm" 
+          Text="分享文件" onclick="write_Click"/>
+  </div>
+  <div id="tiezi" runat="server"></div>
 
 </asp:Content>
 

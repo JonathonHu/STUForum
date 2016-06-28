@@ -16,7 +16,7 @@
 </nav> 	
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
-<asp:FileUpload ID="upload" runat="server" />
-<asp:Button ID="submit" runat="server" onclick="submit_Click" Text="上传"/>
+<asp:FileUpload ID="upload" runat="server" class="btn btn-lg"/>
+<asp:Button ID="submit" runat="server" class=" btn btn-success btn-lg" style=" margin-left:15px;" onclick="submit_Click" Text="上传"/>
 </asp:Content>
 

@@ -15,13 +15,18 @@ public partial class page_user_upload : System.Web.UI.Page
     }
     protected void submit_Click(object sender, EventArgs e)
     {
+        SqlCommand ins = new SqlCommand("insert into FilePath(name) values(@savename)", conn);
         string savePath = @"C:/STUforum/STUForum/page/fileupload/";
         if (upload.HasFile)
         {
             string fileName = upload.FileName;
             savePath += fileName;
+            ins.Parameters.AddWithValue("@savename", fileName);
+            conn.Open();
+            ins.ExecuteScalar();
+            conn.Close();
             upload.SaveAs(savePath);
-            ClientScript.RegisterStartupScript(this.GetType(), "", "<script type='text/javascript'>alert('上传成功');</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "", "<script type='text/javascript'>alert('上传成功');window.location.href='./share.aspx';</script>");
         }
         else
         {
