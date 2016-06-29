@@ -11,7 +11,9 @@ public partial class page_login : System.Web.UI.Page
     SqlConnection conn = new SqlConnection("Data Source=hobson; Initial Catalog=STUBBS;Integrated Security=True");
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        if(IsPostBack)
+            if (Session.Count != 0)
+                 Session.Clear();
     }
     protected void submit_Click(object sender, EventArgs e)
     {
@@ -36,7 +38,7 @@ public partial class page_login : System.Web.UI.Page
             Session["user"] = i;
             switch (sel)
             {
-                case "admin": Response.Redirect("./user/homepage.aspx"); break;
+                case "admin": Response.Redirect("./admin/homepage.aspx"); break;
                 case "user": Response.Redirect("./user/homepage.aspx"); break;
                 
             }
