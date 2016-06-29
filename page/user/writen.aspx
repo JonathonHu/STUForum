@@ -23,7 +23,7 @@
 			<li ><a href="./touristy.aspx">一起去旅行</a></li>
             <li><a href="./myPage.aspx">我的主页</a></li>
             <li><a href="./share.aspx">文件分享</a></li>
-            <li><a href="../login.aspx">退出</a></li>
+            <li><a href="../exit.aspx">退出</a></li>
 		</ul>
 	</div>
 </nav> 		<!-- 这里是导航-->

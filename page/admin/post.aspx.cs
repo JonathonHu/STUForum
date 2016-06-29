@@ -16,10 +16,10 @@ public partial class page_admin_post : System.Web.UI.Page
         SqlDataReader reader = cmd.ExecuteReader();
 
         string str = "";
-        string pid1 = "";
-        string pid2 = "";
-        string pid3 = "";
-        string pid4 = "";
+        string pid1 = "<p class='text-center h3' style='margin-top:80px;'>学习交流</p>";
+        string pid2 = "<p class='text-center h3' style='margin-top:80px;'>考试相关</p>";
+        string pid3 = "<p class='text-center h3' style='margin-top:80px;'>一起去旅行</p>";
+        string pid4 = "<p class='text-center h3' style='margin-top:80px;'>七彩社团</p>";
 
         while (reader.Read())
         {
@@ -40,6 +40,29 @@ public partial class page_admin_post : System.Web.UI.Page
                 pid4 = pid4 + "<div class='panel panel-default'><div class='panel-heading'><a href='./content.aspx?id=" + reader.GetValue(5) + "&fid=4'>" + reader.GetValue(0).ToString() + "</a></div></div>";
             }
         }
+
+
+        if (pid1 == "<p class='text-center h3' style='margin-top:80px;'>学习交流</p>")
+        {
+            pid1 = "";
+        }
+        if (pid2 == "<p class='text-center h3' style='margin-top:80px;'>考试相关</p>")
+        {
+            pid2 = "";
+        }
+        if (pid3 == "<p class='text-center h3' style='margin-top:80px;'>一起去旅行</p>")
+        {
+            pid3 = "";
+        }
+        if (pid4 == "<p class='text-center h3' style='margin-top:80px;'>七彩社团</p>")
+        {
+            pid4 = "";
+        }
+
+
+
+
+
         str = pid1 + pid2 + pid3 + pid4;
         if (str == "")
             str = "<div class='panel panel-default'><div class='panel-heading'>暂无内容</div></div>";

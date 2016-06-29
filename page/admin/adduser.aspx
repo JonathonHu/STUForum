@@ -8,7 +8,7 @@
  	                <li><a href="./notice.aspx">公告管理</a></li>
  	                <li  class="active"><a href="./user.aspx">用户管理</a></li>
                     <li><a href="./post.aspx">贴子管理</a></li>
-                    <li><a href="../login.aspx">退出</a></li>
+                    <li><a href="../exit.aspx">退出</a></li>
                 </ul>
 	        </div>
 </asp:Content>
