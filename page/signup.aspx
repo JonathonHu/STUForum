@@ -14,24 +14,22 @@
 
   <div class="container-fluid">
     <asp:Image runat="server" ID = "head" ImageUrl="~/image/bbs.png" Width="100%" height="80px"/>
-    
   </div>
 
-<p class="text-center h1" style="margin-top:80px;">注册</p>
-<div class="form-group col-lg-5">
-    <asp:TextBox ID="username" runat="server" class="form-control input-lg col-lg-offset-9" style="margin-top:15px;" placeholder="请输入账号"></asp:TextBox>
-    <asp:TextBox ID="password" runat="server" class="form-control input-lg col-lg-offset-9" style="margin-top:15px;" placeholder="请输入密码"></asp:TextBox>
-    <asp:TextBox ID="birthday" runat="server" class="form-control input-lg col-lg-offset-9" style="margin-top:15px;" placeholder="请输入生日,格式：19950101"></asp:TextBox>
-    <asp:DropDownList runat="server" ID="who"  class="form-control input-lg col-lg-offset-9" style="width:100px; margin-top:15px;">
-        <asp:ListItem Value="1">男</asp:ListItem>
-        <asp:ListItem Value="0">女</asp:ListItem>
-    </asp:DropDownList>
-  </div>
-  <div>
-    <asp:Button runat="server" ID="submit" class="btn btn-default btn-lg" 
-          style="margin-top:200px;" Text="确认" onclick="submit_Click"/>
-    <asp:Button runat="server" ID="reset" class="btn btn-default btn-lg" 
-          style="margin-top:200px;" Text="重置"/>
+<p class="text-center h1" style="margin-top:30px;">注册</p>
+<div class="form-group col-lg-6 col-lg-offset-3" >
+    <asp:TextBox runat="server" ID="username" type="text" style="margin-top:15px;" class=" form-control input-lg col-lg-6 "  placeholder="账号"/>
+    <asp:TextBox runat="server" ID="password" type="text" style="margin-top:5px;"  class="form-control input-lg col-lg-6 "  placeholder="密码"/>
+    <asp:TextBox runat="server" ID="stuNum" type="text" style="margin-top:15px;" class=" form-control input-lg col-lg-6 "  placeholder="学号"/>
+    <asp:TextBox runat="server" ID="name" type="text" style="margin-top:5px;"  class="form-control input-lg col-lg-6 "  placeholder="姓名"/>
+    <asp:TextBox runat="server" ID="sex" type="text" style="margin-top:5px;" class="form-control input-lg col-lg-6 "  placeholder="性别"/>
+    <asp:TextBox runat="server" ID="university" type="text" style="margin-top:5px;" class=" form-control input-lg col-lg-6 "  placeholder="学院"/>
+    <asp:TextBox runat="server" ID="birthday" type="text" style="margin-top:5px;" class=" form-control input-lg col-lg-6 "  placeholder="生日（如：19900101）"/> 
+    <asp:Button runat="server" ID="Button1"  
+        style="margin-top:5px; margin-left:150px;" class=" btn btn-default btn-lg col-lg-offset-1" 
+      Text="提交" onclick="Button1_Click"/>
+      <asp:Button runat="server" ID="Button2"  style="margin-top:5px;" class="btn btn-default btn-lg col-lg-offset-1" 
+      Text="重置" onclick="Button2_Click"/>
   </div>
   </div>
     </form>

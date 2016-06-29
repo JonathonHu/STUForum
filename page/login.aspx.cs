@@ -24,7 +24,7 @@ public partial class page_login : System.Web.UI.Page
         switch (sel)
         {
             case "admin": cmd.CommandText = "select aID from admin where aUsername= @name and aPassword = @psw "; break;
-            case "user": cmd.CommandText = "select uID from users where uUsername= @name and uPassword = @psw"; break;
+            case "user": cmd.CommandText = "select uID from users where uUsername= @name and uPassword = @psw and uState=1"; break;
         }
         cmd.Parameters.AddWithValue("@name", a);
         cmd.Parameters.AddWithValue("@psw", b);
@@ -46,7 +46,7 @@ public partial class page_login : System.Web.UI.Page
         }
         else
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "", "<script type='text/javascript'>alert('登录失败，账号或密码错误');</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "", "<script type='text/javascript'>alert('登录失败，账号或密码错误,或审核未通过');</script>");
             password.Text = "";
         }
     }
